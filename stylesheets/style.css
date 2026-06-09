@@ -252,7 +252,7 @@ textarea,
     transform-origin: 0 0;
     will-change: transform;
     --cursor-color: var(--main);
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.25s ease, fill 0.12s ease, stroke 0.12s ease;
 }
 
