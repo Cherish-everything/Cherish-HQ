@@ -1,3 +1,6 @@
+/* ==========================================
+   1. ROOT VARIABLES
+   ========================================== */
 :root {
     --font: 'Oswald Bold',
         -apple-system,
@@ -10,7 +13,9 @@
     --purple: #231c23;
 }
 
-/* --- GLOBAL CONTAINER SETTINGS --- */
+/* ==========================================
+   2. CORE CONTAINERS & LIST SETTINGS
+   ========================================== */
 .navbar-container {
     display: flex;
     flex-direction: row;
@@ -28,6 +33,15 @@
     box-sizing: border-box;
 }
 
+.navbar-container ul,
+.navbar-container li {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+/* ==========================================
+   3. LOGO STYLING
+   ========================================== */
 .logo {
     height: 30px;
     width: auto;
@@ -40,7 +54,10 @@
     filter: drop-shadow(4px 4px 8px rgba(251, 0, 255, 0.4));
 }
 
-/* --- THE HAMBURGER BUTTON STYLES --- */
+/* ==========================================
+   4. NAVIGATION MENU BUTTONS (TOGGLERS)
+   ========================================== */
+/* --- CUSTOM HAMBURGER MENU --- */
 .hamburger-menu {
     display: none;
     /* Hidden by default on Desktop widths */
@@ -76,6 +93,7 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* --- BOOTSTRAP DEFAULT TOGGLER OVERRIDE --- */
 .navbar-toggler {
     display: none !important;
     /* Completely nukes the gray dash from the DOM layout */
@@ -88,86 +106,35 @@
     border: none;
 }
 
-.navbar-container ul,
-.navbar-container li {
-    list-style: none !important;
-    list-style-type: none !important;
+/* ==========================================
+   5. GLOBAL NAV ITEM & LINK STYLES
+   ========================================== */
+.nav-item {
+    background-color: var(--pink);
+    text-wrap: nowrap;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: var(--font);
+    transition: transform 0.1s ease;
+}
+
+.nav-link {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font);
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 1.2rem;
 }
 
 /* ==========================================
-   WIDTH COMPATIBILITY (MEDIA QUERIES)
+   6. DESKTOP MEDIA VIEWPORTS (min-width: 993px)
    ========================================== */
-
-/* --- MOBILE & TABLET LAYOUT --- */
-@media (max-width: 992px) {
-    .hamburger-menu {
-        display: flex;
-        /* Reveal custom hamburger button */
-    }
-
-    /* Transform links wrapper into a clean absolute dropdown drawer */
-    .navbar-collapse {
-        display: none;
-        /* Hidden by default until toggled */
-        width: calc(100% - 4%);
-        /* Spans width matching the margin constraints */
-        position: absolute;
-        top: 110%;
-        /* Drops cleanly below the rounded pill border */
-        left: 2%;
-        background-color: #231c23;
-        border: 2px solid var(--pink);
-        border-radius: 15px;
-        padding: 15px;
-        z-index: 999;
-        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
-        box-sizing: border-box;
-    }
-
-    /* Class injected via jQuery to render the open state */
-    .navbar-collapse.show-menu {
-        display: flex !important;
-        flex-direction: column;
-    }
-
-    .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    .nav-item {
-        width: 100% !important;
-        /* Items fill width on vertical stacks */
-        margin: 0;
-        box-sizing: border-box;
-        justify-content: center;
-        /* Centers text for mobile neatness */
-    }
-
-    /* Adjust desktop absolute layout for mobile sub-menus */
-    .nav-item.dropdown {
-        position: relative;
-        flex-direction: column;
-    }
-
-    .dropdown-menu {
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100%;
-        margin-top: 10px !important;
-        box-sizing: border-box;
-        text-align: center;
-    }
-}
-
-/* --- DESKTOP LAYOUT --- */
 @media (min-width: 993px) {
     .navbar-collapse {
         display: flex !important;
@@ -210,28 +177,75 @@
     }
 }
 
-/* --- STYLING DESIGN LEFTOVERS --- */
-.nav-item {
-    background-color: var(--pink);
-    text-wrap: nowrap;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-family: var(--font);
-    transition: transform 0.1s ease;
+/* ==========================================
+   7. MOBILE & TABLET MEDIA VIEWPORTS (max-width: 992px)
+   ========================================== */
+@media (max-width: 992px) {
+    .hamburger-menu {
+        display: flex;
+        /* Reveal custom hamburger button */
+    }
+
+    /* Transform links wrapper into a clean absolute dropdown drawer */
+    .navbar-collapse.show-menu {
+        display: flex !important;
+        flex-direction: column !important;
+
+        /* Adds breathing room inside the pink-bordered drawer frame */
+        padding: 30px 20px !important;
+        gap: 16px !important;
+        /* Forces uniform spacing between your whimsy cards */
+
+        background: var(--purple);
+        /* Matches your dark, moody background color */
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    /* Class injected via jQuery to render the open state */
+    .navbar-collapse.show-menu {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 14px;
+
+        list-style: none;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .nav-item {
+        width: 100% !important;
+        /* Items fill width on vertical stacks */
+        margin: 0;
+        box-sizing: border-box;
+        justify-content: center;
+        /* Centers text for mobile neatness */
+    }
+
+    /* Adjust desktop absolute layout for mobile sub-menus */
+    .nav-item.dropdown .dropdown-menu {
+        background: var(--purple) !important;
+        border: 1px dashed var(--main) !important;
+        margin-top: 8px !important;
+        border-radius: 6px;
+        text-align: center;
+    }
+
+    .dropdown-item {
+        color: #b5b5b5 !important;
+        padding: 10px 0 !important;
+    }
 }
 
-.nav-link {
-    color: black;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: var(--font);
-    font-weight: 700;
-    position: relative;
-    z-index: 2;
-    display: block;
-    width: 100%;
-}
-
+/* ==========================================
+   8. NESTED DROPDOWN LIST TARGETS
+   ========================================== */
 .dropdown-menu .dropdown-item {
     color: #ffffff !important;
     font-weight: 500;
@@ -240,5 +254,5 @@
     display: block;
     background-color: transparent !important;
     text-decoration: none;
-    transition: background-color
+    transition: background-color;
 }

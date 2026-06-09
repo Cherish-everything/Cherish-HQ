@@ -292,7 +292,7 @@ body::before {
     justify-content: center;
     gap: 12px;
     padding: 10px 18px;
-    background: var(--dark-gray, #151515) !important;
+    background: var(--secondary) !important;
     border: 2px solid var(--white) !important;
     border-radius: 4px;
     flex-shrink: 0;
@@ -358,8 +358,9 @@ body::before {
     display: flex;
     align-items: center;
     cursor: none;
-    background: var(--dark-gray, #151515);
+    background: var(--secondary);
     border: 2px solid var(--white);
+    padding: 20px;
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -586,6 +587,7 @@ audio {
 .stories-container {
     width: 100%;
     box-sizing: border-box;
+    margin: 20px;
 }
 
 .library-rack {
@@ -645,12 +647,13 @@ audio {
 .cinema-lobby-container {
     width: 100%;
     box-sizing: border-box;
+    margin: 20px;
 }
 
 .poster-marquee-grid {
     display: grid;
     justify-items: center;
-    align-items: start;
+    align-items: center;
 }
 
 .poster-wrapper {
@@ -1060,10 +1063,17 @@ audio {
 
     /* 1. Ensure the main slider wrapper container can stretch to full screen width */
     .swiper {
-        width: 100%;
+        width: max-content;
+        /* Snaps the container width tightly around your image content */
         max-width: 100%;
-        padding: 20px 0;
-        /* Optional layout padding */
+        /* Prevents it from breaking past mobile screen edges */
+        height: 450px;
+        margin: 0 auto;
+        /* Centers the entire wrap frame horizontally on your page */
+        border-radius: 10px;
+        border: 2px solid var(--main);
+        box-shadow: 0 4px 10px rgba(255, 0, 174, 0.5);
+        background-color: #151515;
     }
 
     .swiper-wrapper {
@@ -1131,8 +1141,28 @@ audio {
         gap: 30px;
     }
 
+    /* --- BASE VINYL CARD STATES --- */
     .vinyl-card {
-        padding: 20px;
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+            box-shadow 0.3s ease-in-out;
+        will-change: transform, box-shadow;
+    }
+
+    /* --- INTERACTIVE HOVER & FOCUS STATES --- */
+    .vinyl-card:hover,
+    .vinyl-card:focus-within {
+        /* Floats the card up smoothly along the Y-axis */
+        transform: translateY(-8px);
+
+        /* Generates an intense, multi-layered neon aura using your custom accent color.
+        Layer 1: Sharp crisp inner glow
+        Layer 2: Vibrant medium feather spreading out
+        Layer 3: Large, ambient semi-transparent background wash
+    */
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4),
+            0 0 15px var(--accent),
+            0 0 30px rgba(255, 0, 174, 0.3);
+        /* Fallback subtle pink wash if accent is local */
     }
 
     .vinyl-disc-wrapper {
@@ -1641,12 +1671,6 @@ audio {
 
     .nav-item {
         width: 100%;
-    }
-
-    .nav-link {
-        display: block;
-        padding: 10px;
-        font-size: 1.2rem;
     }
 
     .swiper-slide {
