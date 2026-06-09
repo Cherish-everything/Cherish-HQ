@@ -1048,10 +1048,40 @@ audio {
         border-color: var(--main);
     }
 
+    /* 1. Ensure the main slider wrapper container can stretch to full screen width */
     .swiper {
-        height: 450px;
-        width: 85vw;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 0;
+        /* Optional layout padding */
     }
+
+    /* 2. FORCE THE SLIDE TO ADAPT TO ITS CONTENT */
+    .swiper-slide {
+        width: auto !important;
+        /* Overrides Swiper's internal style calculations */
+        height: 400px;
+        /* Set your preferred track layout height here */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 3. STYLESHEET RULES FOR THE IMAGES INSIDE */
+    .swiper-slide img {
+        height: 100%;
+        /* Forces image to fill the layout height cleanly */
+        width: auto;
+        /* Automatically calculates width based on the aspect ratio */
+        display: block;
+        object-fit: contain;
+        /* Prevents distortion, stretching, or cropping */
+
+        /* RESPONSIVE SAFETY NET: Prevents huge images from clipping on small screens */
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
 
     .music-showcase-container {
         margin: 60px auto;
@@ -1588,5 +1618,10 @@ audio {
         display: block;
         padding: 10px;
         font-size: 1.2rem;
+    }
+
+    .swiper-slide {
+        height: 250px;
+        /* Lowers track height on mobile viewports so it fits nicely */
     }
 }
