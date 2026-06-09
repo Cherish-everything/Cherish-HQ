@@ -182,8 +182,22 @@
    ========================================== */
 @media (max-width: 992px) {
     .hamburger-menu {
-        display: flex;
-        /* Reveal custom hamburger button */
+            display: flex;
+            /* Reveal custom hamburger button */
+    }
+
+    /* CRITICAL MISSING PIECE ADDED HERE: 
+        Hides the menu container by default on mobile layouts 
+        until toggled open via jQuery/JavaScript 
+    */
+    .navbar-collapse {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+        margin-top: 10px;
     }
 
     /* Transform links wrapper into a clean absolute dropdown drawer */
@@ -200,12 +214,6 @@
         /* Matches your dark, moody background color */
         border-radius: 12px;
         box-sizing: border-box;
-    }
-
-    /* Class injected via jQuery to render the open state */
-    .navbar-collapse.show-menu {
-        display: flex !important;
-        flex-direction: column;
     }
 
     .navbar-nav {

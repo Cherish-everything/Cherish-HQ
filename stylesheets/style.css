@@ -37,7 +37,6 @@ body::before {
     height: 100vh;
     /* Covers 100% of the viewport height perfectly */
     z-index: -1;
-    /* Keeps it safely behind your text and boxes */
     background-image: url('../assets/bg-pattern.webp');
     background-repeat: repeat-y;
     background-position: left top;
@@ -320,12 +319,10 @@ body::before {
 
 .swiper {
     width: max-content;
-    /* Snaps the container width tightly around your image content */
     max-width: 100%;
     /* Prevents it from breaking past mobile screen edges */
     height: 450px;
     margin: 0 auto;
-    /* Centers the entire wrap frame horizontally on your page */
     border-radius: 10px;
     border: 2px solid var(--main);
     box-shadow: 0 4px 10px rgba(255, 0, 174, 0.5);
@@ -349,13 +346,10 @@ body::before {
     width: auto;
     /* Automatically calculates width based on the file's natural aspect ratio */
     display: block;
-
-    /* CRITICAL: Keeps your certificates uncropped, crisp, and beautifully proportioned */
     object-fit: contain;
 
     /* MOBILE SAFETY NET: Prevents huge images from clipping past mobile viewport edges */
     max-width: 100vw;
-    box-sizing: border-box;
 }
 
 .music-showcase-container {
@@ -1009,12 +1003,10 @@ audio {
     /* 1. Ensure the main slider wrapper container can stretch to full screen width */
     .swiper {
         width: max-content;
-        /* Snaps the container width tightly around your image content */
         max-width: 100%;
         /* Prevents it from breaking past mobile screen edges */
         height: 450px;
         margin: 0 auto;
-        /* Centers the entire wrap frame horizontally on your page */
         border-radius: 10px;
         border: 2px solid var(--main);
         box-shadow: 0 4px 10px rgba(255, 0, 174, 0.5);
@@ -1031,8 +1023,7 @@ audio {
     .swiper-slide {
         width: auto !important;
         /* Overrides Swiper's internal style calculations */
-        height: 400px;
-        /* Set your preferred track layout height here */
+        height: 450px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1099,7 +1090,7 @@ audio {
         /* Floats the card up smoothly along the Y-axis */
         transform: translateY(-8px);
 
-        /* Generates an intense, multi-layered neon aura using your custom accent color.
+        /* 
         Layer 1: Sharp crisp inner glow
         Layer 2: Vibrant medium feather spreading out
         Layer 3: Large, ambient semi-transparent background wash

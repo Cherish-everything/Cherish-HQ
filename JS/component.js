@@ -165,7 +165,6 @@ class Greeting extends HTMLElement {
             </div>`;
 
         const container = this.querySelector('.greeting-container');
-        applyScrapbookBorders(container);
     }
 }
 if (!customElements.get('custom-greeting')) {
