@@ -374,18 +374,17 @@ body::before {
 }
 
 .swiper {
-    width: 100%;
+    width: max-content;
+    /* Snaps the container width tightly around your image content */
     max-width: 100%;
-
-    /* CRITICAL: Establish a firm height track for desktop screens */
+    /* Prevents it from breaking past mobile screen edges */
     height: 450px;
-
+    margin: 0 auto;
+    /* Centers the entire wrap frame horizontally on your page */
     border-radius: 10px;
-    border: 2px solid var(--pink, #eb40d4);
-    /* Linked to your custom pink fallback variable */
+    border: 2px solid var(--main);
     box-shadow: 0 4px 10px rgba(255, 0, 174, 0.5);
     background-color: #151515;
-    /* Prevents white flashes behind images */
 }
 
 /* --- INDIVIDUAL SLIDE WRAPPER --- */
@@ -1045,22 +1044,12 @@ audio {
     }
 
     .left-dagger .dagger-item {
-        border-radius: 0px 80px 20px 0px;
         transform: perspective(800px) rotateY(10deg);
     }
 
-    .left-dagger .dagger-handle {
-        border-radius: 5px 0 0 5px;
-    }
-
     .right-dagger .dagger-item {
-        border-radius: 80px 0px 0px 80px;
         transform: perspective(800px) rotateY(-10deg);
         text-align: right;
-    }
-
-    .right-dagger .dagger-handle {
-        border-radius: 0 5px 5px 0;
     }
 
     .dagger-item:hover {
@@ -1075,7 +1064,7 @@ audio {
         padding: 20px 0;
         /* Optional layout padding */
     }
-    
+
     .swiper-wrapper {
         display: flex;
         /* Keeps slides centered on screen if they don't fill up the whole track width */
@@ -1383,11 +1372,13 @@ audio {
 
     .grid-item h3 {
         font-size: 1.6rem;
+        font-family: var(--font);
     }
 
     .grid-item p {
         font-size: 0.9rem;
         margin-top: 8px;
+        font-family: var(--font);
     }
 
     .grid-item:hover {
@@ -1405,11 +1396,13 @@ audio {
 
     #modal-title {
         font-size: 1.6rem;
+        font-family: var(--font);
     }
 
     #modal-desc {
         font-size: 0.95rem;
         margin-top: 15px;
+        font-family: var(--font);
     }
 
     .page-footer {

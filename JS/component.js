@@ -4,8 +4,8 @@
 const projectDatabase = {
     "mothers-day-gift": {
         title: "Mother's Day Gift",
-        image: "../assets/project-previews/mother's-day.webp",
-        link: "../mother's-day/index.html",
+        image: "../Cherish-HQ/assets/project-previews/mother's-day.webp",
+        link: "../Cherish-HQ/mother's-day/index.html",
         description: `
             <p>A gift I coded overnight for Mother's Day, and my very first independent HTML project! It's a cozy, personal 2-page digital letter featuring custom message reveals that open up when clicked.</p>
             <p>Building this from scratch was what officially sparked my love for self-taught web development.</p>
@@ -37,7 +37,7 @@ const projectDatabase = {
     },
     "To-do": {
         title: "Chatbot To-do list",
-        image: "../assets/project-previews/to-do.webp",
+        image: "../Cherish-HQ/assets/project-previews/to-do.webp",
         link: "https://to-do-chatbot-irio.vercel.app/",
         description: `
             <p>An unconventional to-do list web app that fights procrastination by giving you dynamic, motivational (and sometimes strictly "locked-in") messages based on your progress.</p>
@@ -53,7 +53,7 @@ const projectDatabase = {
 
     "the-red-rails": {
         title: "The Red Rails",
-        image: "../assets/project-previews/red-rails.webp",
+        image: "../Cherish-HQ/assets/project-previews/red-rails.webp",
         link: "https://cherisheverything.pythonanywhere.com/",
         description: `
             <p>A text-based story game built using Python and HTML! This is my longest and biggest project yet, created as my final capstone for the Harvardx CS50 course where we had complete freedom to build whatever we wanted.</p>
@@ -71,7 +71,7 @@ const projectDatabase = {
     "songwriting": {
         title: "Songs (and music) I wrote!",
         image: "",
-        link: "../songwriting.html",
+        link: "../Cherish-HQ/songwriting.html",
         description: `
             <p>I write songs whenever I feel a strong enough emotion. To be honest, I never considered myself a naturally gifted musician—my electric guitar usually just sits in the corner of my room gathering dust, and I was never the "best" singer when performing in local temple bands or my CCA choir.</p>
             <p>But I still think music is a beautiful way to express yourself, so I decided to step out of my comfort zone and give songwriting a real shot ;)</p>
@@ -88,7 +88,7 @@ const projectDatabase = {
     "storywriting": {
         title: "Novels and Short Stories",
         image: "",
-        link: "../storywriting.html",
+        link: "../Cherish-HQ/storywriting.html",
         description: `
             <p>I have always absolutely loved creative writing. Before this, I actually wrote a full novel called <em>'Whispers of a Ghost'</em>. Admittedly, I rushed through parts of it back then because I was eager to put it on a scholarship application, haha! But the experience taught me so much about long-form plotting.</p>
             <p>Now, I'm applying everything I learned into writing a brand new novel project, currently titled <em>"I do."</em></p>
@@ -105,7 +105,7 @@ const projectDatabase = {
     "videos": {
         title: "Videos and Filmmaking(?)",
         image: "",
-        link: "../videos.html",
+        link: "../Cherish-HQ/videos.html",
         description: `
             <p>I also love making videos! Even though I'm primarily a science/STEM kid, I’ve always had a massive soft spot for creative arts, and video editing lets me combine both sides of my brain.</p>
             <p>Most of my videos reflect on personal experiences and lessons I've learned along the way, using visual storytelling to connect with an audience.</p>
