@@ -354,14 +354,18 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Drop this vanilla JS into component.js to replace the jQuery snippet
+window.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navbarCollapse = document.getElementById('navbarNavDropdown');
 
-$(document).ready(function () {
-    $('#hamburger-btn').on('click', function () {
-        // Toggles the visibility of the main navigation links
-        $('.navbar-collapse').toggleClass('show-menu');
+    if (hamburgerBtn && navbarCollapse) {
+        hamburgerBtn.addEventListener('click', function () {
+            // Toggles the visibility of the main navigation links
+            navbarCollapse.classList.toggle('show-menu');
 
-        // Optional: Toggles an active state on the hamburger button itself 
-        // (Great if you want to animate the 3 bars into an "X")
-        $(this).toggleClass('open');
-    });
+            // Toggles the 'open' animation class on the burger button
+            this.classList.toggle('open');
+        });
+    }
 });

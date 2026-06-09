@@ -76,7 +76,9 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
-
+.dropdown-toggle {
+    display: none;
+}
 /* ==========================================
    WIDTH COMPATIBILITY (MEDIA QUERIES)
    ========================================== */

@@ -1050,6 +1050,7 @@ audio {
 
     .swiper {
         height: 450px;
+        width: 85vw;
     }
 
     .music-showcase-container {
