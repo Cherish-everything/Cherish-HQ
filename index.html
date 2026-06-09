@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./stylesheets/navbar.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./JS/component.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <nav class="navbar-container">
+        <a class="navbar-brand" href="./index.html">
+            <img src="./assets/logo.svg" alt="ClastrAgency logo" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active whimsy-card"><a class="nav-link" href="./index.html">Home</a></li>
+                <li class="nav-item whimsy-card"><a class="nav-link" href="./aboutme.html">About Me</a></li>
+                <li class="nav-item whimsy-card"><a class="nav-link" href="./STEMjourney.html">STEM Journey</a></li>
+                <li class="nav-item whimsy-card"><a class="nav-link" href="https://www.instagram.com/clastragency/"
+                        target="_blank" rel="noopener noreferrer">ClastrAgency</a>
+                </li>
+                <li class="nav-item whimsy-card"><a class="nav-link" href="./projects.html">Passion Projects</a></li>
+                <li class="nav-item dropdown whimsy-card">
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+                        Tools++
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./coming-soon.html">Coming Soon</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+    <main>
+        
+    <h1><custom-greeting></custom-greeting></h1>
+
+    <div class="swiper">
+        <!-- Required wrapper element -->
+        <div class="swiper-wrapper">
+            <!-- Slides containing your images -->
+            <div class="swiper-slide"><img src="./assets/CS50x.png" alt="CS50x Certificate"></div>
+        </div>
+    
+        <div class="swiper-pagination"></div>
+    
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <div class="article-1-container">
+        <h1 class="article-1-heading">Hi! I'm Cherish :)</h1>
+        <p class="article-1">A self-taught programmer, mechanical designer, and creative director building things at the intersection of logic and
+        narrative systems.</p>
+    </div>
+
+    <div class="article-2-container">
+        <h1 class="article-2-heading">If you're new here,</h1>
+        <p class="article-2">Take a look through my self-directed STEM Journey, digital blueprints, and interactive passion projects!</p>
+    </div>
+    
+    </main>
+    <div id="sword">
+        <svg viewBox="0 0 210 297" id="sword-svg" xmlns="http://www.w3.org/2000/svg">
+            <path id="blade"
+                d="m 69.097074,19.423633 a 0.71008144,4.8746761 0 0 0 -0.635103,2.695442 L 62.8804,98.755236 a 0.71008144,4.8746761 0 0 0 0,4.357884 l 1.92288,26.40268 -0.609266,3.34452 -17.284216,5.26999 a 1.3722753,0.83681336 0 0 0 0,1.49707 l 15.206824,4.63641 -0.03462,0.19016 a 0.80129693,2.1992882 0 0 0 0,1.96629 l 6.29884,34.57567 a 0.80129693,2.1992882 0 0 0 0.448551,1.08779 0.71008144,4.8746761 0 0 0 0.535368,5.2e-4 0.80129693,2.1992882 0 0 0 0.449069,-1.08831 l 6.298837,-34.57567 a 0.80129693,2.1992882 0 0 0 0,-1.96629 l -0.03462,-0.19016 15.206307,-4.63641 a 1.3722753,0.83681336 0 0 0 0.75861,-0.7488 1.3722753,0.83681336 0 0 0 -0.75861,-0.74827 l -17.2837,-5.26999 -0.609782,-3.34659 1.92288,-26.40061 a 0.71008144,4.8746761 0 0 0 0,-4.357884 L 69.732181,22.119075 a 0.71008144,4.8746761 0 0 0 -0.635104,-2.695442 z m 0,15.771651 4.787822,65.738636 -1.628325,22.3538 -1.04128,-5.71596 1.211812,-16.63836 -3.330029,-45.725377 -3.330546,45.725377 1.212329,16.64146 -1.041796,5.71648 -1.628325,-22.35742 z m 1.606621,89.402436 1.04128,5.71648 -0.132292,1.81799 -1.25057,-0.38137 -0.128157,-0.70281 z m -3.213241,5.2e-4 0.469739,6.44977 -0.128158,0.70281 -1.250569,0.38137 -0.132809,-1.81799 z m -0.01912,9.13334 -0.331246,1.81903 -0.302824,0.092 -0.122473,-1.68001 z m 3.25148,0 0.756544,0.231 -0.122474,1.68001 -0.302822,-0.092 z m -6.889501,1.1095 -0.331246,1.81851 -7.277075,2.21899 6.51123,1.98542 -0.296622,1.62728 -11.847856,-3.6127 z m 10.52804,0 13.241568,4.0375 -11.847855,3.6127 -0.296623,-1.6278 6.510714,-1.9849 -7.276558,-2.21847 z m -9.928593,6.54019 1.262972,0.385 0.08888,1.22265 -0.08992,0.49455 -1.558561,-0.4749 z m 9.328112,0 0.296624,1.6273 -1.558045,0.47542 -0.08992,-0.49351 0.0894,-1.22421 z m -9.947713,3.3998 1.558561,0.47542 -0.03307,0.18035 1.040247,5.70869 1.09554,15.04198 -3.780647,-20.75015 z m 10.567313,5.1e-4 0.119373,0.65578 -3.779614,20.7486 1.09554,-15.04404 1.039214,-5.70508 -0.03307,-0.18035 z m -5.356778,20.88348 0.07338,0.40153 0.07338,-0.40153 -0.07338,1.00459 z" />
+        </svg>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Loop allows infinite scrolling back to slide 1
+            loop: true,
+
+            // Auto-slide functionality
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false, // Keeps autoplay running after manual swipes
+            },
+
+            // Pagination indicators
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // Bottom scrollbar element
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
+    
+</body>
+
+</html>

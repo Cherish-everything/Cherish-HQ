@@ -1,0 +1,242 @@
+<<<<<<< HEAD
+:root {
+    --font: 'Oswald Bold',
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;;
+    --pink: #eb40d4;
+    --blue: #2824ea;
+    --purple: #231c23;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    background-color: #231c23;
+    border-radius: 20px;
+    margin: 2%;
+    max-width: 100%;
+
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+.navbar-collapse {
+    display: flex;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--pink);
+    margin: 2%;
+    width: max-content;
+    text-wrap: nowrap;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: var(--font);
+}
+
+.nav-link {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font);
+    font-weight: 700;
+    position: relative;
+    z-index: 2; 
+}
+
+/* 1. KEEP THE DROPDOWN CONTAINER BEHAVIOR CLEAN */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #231c23 !important;
+    /* Keep it dark charcoal */
+    border: 2px solid var(--pink);
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 160px;
+    margin-top: 12px;
+    /* Gives the container a solid minimum width */
+    z-index: 9999;
+}
+
+/* Show the menu container on hover or click */
+.dropdown-menu.show,
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+}
+
+/* 2. SPECIFIC ITEMS INSIDE THE DROPDOWN */
+.dropdown-menu .dropdown-item {
+    color: #ffffff !important;
+    /* Crisp white links inside the dark box */
+    font-weight: 500;
+    font-family: var(--font), sans-serif;
+    padding: 8px 16px;
+    display: block;
+    background-color: transparent !important;
+    text-decoration: none;
+    /* Keeps container dark by default */
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+/* 3. ONLY THE DROPDOWN LINK HOVER EFFECT */
+.dropdown-menu .dropdown-item:hover {
+    background-color: var(--pink) !important;
+    /* Pop pink highlight on link hover */
+    color: #231c23 !important;
+    /* Invert text to charcoal */
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+    margin-left: 25px;
+    margin-top: 7.5px;
+}
+
+.logo:hover {
+    transform: scale(1.04) rotate(-1.5deg);
+    box-shadow: 8px 8px 0px #000;
+    filter: drop-shadow(4px 4px 8px rgba(251, 0, 255, 0.4));
+=======
+:root {
+    --font: 'Oswald Bold',
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;;
+    --pink: #eb40d4;
+    --blue: #2824ea;
+    --purple: #231c23;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    background-color: #231c23;
+    border-radius: 20px;
+    margin: 2%;
+    max-width: 100%;
+
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+.navbar-collapse {
+    display: flex;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--pink);
+    margin: 2%;
+    width: max-content;
+    text-wrap: nowrap;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: var(--font);
+}
+
+.nav-link {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font);
+    font-weight: 700;
+    position: relative;
+    z-index: 2; 
+}
+
+/* 1. KEEP THE DROPDOWN CONTAINER BEHAVIOR CLEAN */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #231c23 !important;
+    /* Keep it dark charcoal */
+    border: 2px solid var(--pink);
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 160px;
+    margin-top: 12px;
+    /* Gives the container a solid minimum width */
+    z-index: 9999;
+}
+
+/* Show the menu container on hover or click */
+.dropdown-menu.show,
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+}
+
+/* 2. SPECIFIC ITEMS INSIDE THE DROPDOWN */
+.dropdown-menu .dropdown-item {
+    color: #ffffff !important;
+    /* Crisp white links inside the dark box */
+    font-weight: 500;
+    font-family: var(--font), sans-serif;
+    padding: 8px 16px;
+    display: block;
+    background-color: transparent !important;
+    text-decoration: none;
+    /* Keeps container dark by default */
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+/* 3. ONLY THE DROPDOWN LINK HOVER EFFECT */
+.dropdown-menu .dropdown-item:hover {
+    background-color: var(--pink) !important;
+    /* Pop pink highlight on link hover */
+    color: #231c23 !important;
+    /* Invert text to charcoal */
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+    margin-left: 25px;
+    margin-top: 7.5px;
+}
+
+.logo:hover {
+    transform: scale(1.04) rotate(-1.5deg);
+    box-shadow: 8px 8px 0px #000;
+    filter: drop-shadow(4px 4px 8px rgba(251, 0, 255, 0.4));
+>>>>>>> 1e7be9eab5f0dec91e54297a3be4395db9661b54
+}

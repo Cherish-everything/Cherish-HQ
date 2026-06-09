@@ -1,0 +1,232 @@
+<<<<<<< HEAD
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* Horizontal center */
+    align-items: center;
+    /* Vertical center */
+    min-height: 100vh;
+    background-color: #fff5f5;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    /* Stacks items vertically */
+    align-items: center;
+    /* Centers items horizontally within the stack */
+    text-align: center;
+    /* Centers the actual text lines */
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: #ff6666;
+}
+
+.svg-button {
+    background: none;
+    /* Removes the grey box */
+    border: none;
+    /* Removes the outline */
+    cursor: pointer;
+    /* Makes it feel clickable */
+    display: flex;
+    /* Centers the SVG and text together */
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto 0;
+    gap: 5px;
+    /* Space between SVG and text */
+    transition: transform 0.3s ease;
+}
+
+.svg-button svg {
+    fill: #ff7675;
+    /* Your theme color */
+    transition: fill 0.3s ease;
+}
+
+.svg-button:hover {
+    transform: scale(1.1);
+    /* Interactive "pop" effect */
+}
+
+.svg-button:hover svg {
+    fill: #d63031;
+    /* Darkens slightly on hover */
+}
+
+.svg-button span {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #ff7675;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.letter-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.letter-button:hover {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+.letter-button span {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #ff7675;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+=======
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* Horizontal center */
+    align-items: center;
+    /* Vertical center */
+    min-height: 100vh;
+    background-color: #fff5f5;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    /* Stacks items vertically */
+    align-items: center;
+    /* Centers items horizontally within the stack */
+    text-align: center;
+    /* Centers the actual text lines */
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: #ff6666;
+}
+
+.svg-button {
+    background: none;
+    /* Removes the grey box */
+    border: none;
+    /* Removes the outline */
+    cursor: pointer;
+    /* Makes it feel clickable */
+    display: flex;
+    /* Centers the SVG and text together */
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto 0;
+    gap: 5px;
+    /* Space between SVG and text */
+    transition: transform 0.3s ease;
+}
+
+.svg-button svg {
+    fill: #ff7675;
+    /* Your theme color */
+    transition: fill 0.3s ease;
+}
+
+.svg-button:hover {
+    transform: scale(1.1);
+    /* Interactive "pop" effect */
+}
+
+.svg-button:hover svg {
+    fill: #d63031;
+    /* Darkens slightly on hover */
+}
+
+.svg-button span {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #ff7675;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.letter-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.letter-button:hover {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+.letter-button span {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #ff7675;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+>>>>>>> 1e7be9eab5f0dec91e54297a3be4395db9661b54
+}

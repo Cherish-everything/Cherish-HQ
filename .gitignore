@@ -1,0 +1,5 @@
+# Ignore the raw template components
+templates/
+
+# Ignore the local Python build script
+build.py
