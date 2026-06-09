@@ -1075,6 +1075,12 @@ audio {
         padding: 20px 0;
         /* Optional layout padding */
     }
+    
+    .swiper-wrapper {
+        display: flex;
+        /* Keeps slides centered on screen if they don't fill up the whole track width */
+        justify-content: center;
+    }
 
     /* 2. FORCE THE SLIDE TO ADAPT TO ITS CONTENT */
     .swiper-slide {

@@ -229,65 +229,6 @@ const positionElement = (e) => {
 window.addEventListener('mousemove', positionElement);
 
 // ==========================================
-// 5. INTERFACE MODE TOGGLE INTERCEPTOR (WITH MEMORY)
-// ==========================================
-const themeToggleCheckbox = document.getElementById('theme-toggle');
-
-const applySavedTheme = () => {
-    const savedTheme = localStorage.getItem('site-interface-mode');
-    const isZine = (savedTheme === 'zine');
-
-    // 1. Synchronize the system body token array layout
-    if (isZine) {
-        document.body.classList.add('zine-mode');
-    } else {
-        document.body.classList.remove('zine-mode');
-    }
-
-    // 2. FORCE check state synchronization into the DOM element node
-    if (themeToggleCheckbox) {
-        themeToggleCheckbox.checked = isZine;
-    }
-
-    // 3. Recalculate component shapes cleanly
-    initializeAllComponentStyles();
-
-    // Explicitly reshuffle the switch border rules too depending on current theme state
-    const switchWrapper = document.querySelector('.theme-switch-wrapper');
-    if (switchWrapper) {
-        applyScrapbookBorders(switchWrapper);
-    }
-};
-
-// Check browser memory layout loops safely
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applySavedTheme);
-} else {
-    applySavedTheme();
-}
-
-// Watch for manual interface clicks
-if (themeToggleCheckbox) {
-    themeToggleCheckbox.addEventListener('change', () => {
-        if (themeToggleCheckbox.checked) {
-            document.body.classList.add('zine-mode');
-            localStorage.setItem('site-interface-mode', 'zine');
-        } else {
-            document.body.classList.remove('zine-mode');
-            localStorage.setItem('site-interface-mode', 'assassin');
-        }
-
-        initializeAllComponentStyles();
-
-        // Dynamic custom layout border reshaping applied instantly on switch wrapper toggle frame
-        const switchWrapper = document.querySelector('.theme-switch-wrapper');
-        if (switchWrapper) applyScrapbookBorders(switchWrapper);
-
-        const openModalContent = document.querySelector('#popup-modal .modal-content');
-        if (openModalContent) applyScrapbookBorders(openModalContent);
-    });
-}
-// ==========================================
 // 6. DATA-DRIVEN INTERACTION ROUTER (MODAL SYSTEM)
 // ==========================================
 window.addEventListener('DOMContentLoaded', () => {

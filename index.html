@@ -101,17 +101,22 @@
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+    // Check exactly how many slides are loaded in the DOM wrapper
+        const slideCount = document.querySelectorAll('.swiper-slide').length;
+
         const swiper = new Swiper('.swiper', {
-            // CRITICAL: Let CSS rule dimensions dictate individual slide widths
             slidesPerView: 'auto',
             spaceBetween: 25,
             watchSlidesProgress: true,
 
-            loop: true,
-            autoplay: {
+            // CRITICAL FIX: Only activate infinite looping and auto-play if you have 2+ items!
+            loop: slideCount > 1,
+            autoplay: slideCount > 1 ? {
                 delay: 3000,
                 disableOnInteraction: false,
-            },
+            } : false,
+
+            // Only configure UI hooks if they are actually needed
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -124,6 +129,16 @@
                 el: '.swiper-scrollbar',
             },
         });
+
+        // Clean Interface Polish: Hide navigation arrows entirely if there's only 1 slide
+        if (slideCount <= 1) {
+            const nextBtn = document.querySelector('.swiper-button-next');
+            const prevBtn = document.querySelector('.swiper-button-prev');
+            const scrollBar = document.querySelector('.swiper-scrollbar');
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (scrollBar) scrollBar.style.display = 'none';
+        }
     </script>
     
 </body>
