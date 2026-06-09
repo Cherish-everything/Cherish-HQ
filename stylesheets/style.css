@@ -375,24 +375,43 @@ body::before {
 
 .swiper {
     width: 100%;
+    max-width: 100%;
+
+    /* CRITICAL: Establish a firm height track for desktop screens */
+    height: 450px;
+
     border-radius: 10px;
-    border: 2px solid var(--main);
+    border: 2px solid var(--pink, #eb40d4);
+    /* Linked to your custom pink fallback variable */
     box-shadow: 0 4px 10px rgba(255, 0, 174, 0.5);
+    background-color: #151515;
+    /* Prevents white flashes behind images */
 }
 
-.swiper-slide img {
-    width: 100%;
+/* --- INDIVIDUAL SLIDE WRAPPER --- */
+.swiper-slide {
+    /* CRITICAL: Overrides Swiper's internal JavaScript cell-stretching grids */
+    width: auto !important;
     height: 100%;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-    color: var(--main);
-}
+/* --- THE IMAGES INSIDE --- */
+.swiper-slide img {
+    height: 100%;
+    /* Forces image to scale exactly to the 450px track height */
+    width: auto;
+    /* Automatically calculates width based on the file's natural aspect ratio */
+    display: block;
 
-.swiper-pagination-bullet-active {
-    background: #fff;
+    /* CRITICAL: Keeps your certificates uncropped, crisp, and beautifully proportioned */
+    object-fit: contain;
+
+    /* MOBILE SAFETY NET: Prevents huge images from clipping past mobile viewport edges */
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
 .music-showcase-container {
@@ -1083,6 +1102,14 @@ audio {
         box-sizing: border-box;
     }
 
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: var(--pink, #eb40d4);
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #ffffff;
+    }
 
     .music-showcase-container {
         margin: 60px auto;
@@ -1438,7 +1465,8 @@ audio {
     }
 
     .swiper {
-        height: 300px;
+        height: 280px;
+        /* Lowers the track height on smaller screens so the certificate looks clean */
     }
 
     .music-showcase-container {

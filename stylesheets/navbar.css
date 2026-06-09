@@ -76,9 +76,24 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.navbar-toggle {
-    display: none;
+.navbar-toggler {
+    display: none !important;
+    /* Completely nukes the gray dash from the DOM layout */
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
 }
+
+.navbar-container ul,
+.navbar-container li {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
 /* ==========================================
    WIDTH COMPATIBILITY (MEDIA QUERIES)
    ========================================== */

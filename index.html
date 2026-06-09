@@ -102,28 +102,24 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
-            // Loop allows infinite scrolling back to slide 1
-            loop: true,
+            // CRITICAL: Let CSS rule dimensions dictate individual slide widths
+            slidesPerView: 'auto',
+            spaceBetween: 25,
+            watchSlidesProgress: true,
 
-            // Auto-slide functionality
+            loop: true,
             autoplay: {
                 delay: 3000,
-                disableOnInteraction: false, // Keeps autoplay running after manual swipes
+                disableOnInteraction: false,
             },
-
-            // Pagination indicators
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
-
-            // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-
-            // Bottom scrollbar element
             scrollbar: {
                 el: '.swiper-scrollbar',
             },

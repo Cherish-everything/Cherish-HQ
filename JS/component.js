@@ -354,7 +354,9 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// Drop this vanilla JS into component.js to replace the jQuery snippet
+// ==========================================
+// 7. HAMBURGER MOBILE MENU TOGGLE ROUTER
+// ==========================================
 window.addEventListener('DOMContentLoaded', () => {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const navbarCollapse = document.getElementById('navbarNavDropdown');
