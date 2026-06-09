@@ -4,49 +4,199 @@
         BlinkMacSystemFont,
         "Segoe UI",
         Roboto,
-        sans-serif;;
-    --pink: #eb40d4;
+        sans-serif;
+    --pink: #f2179b;
     --blue: #2824ea;
     --purple: #231c23;
 }
 
+/* --- GLOBAL CONTAINER SETTINGS --- */
 .navbar-container {
     display: flex;
     flex-direction: row;
     align-items: center !important;
+    justify-content: space-between;
+    /* Pushes Logo to left, Hamburger/Links to right */
     background-color: #231c23;
     border-radius: 20px;
     margin: 2%;
+    padding: 10px 20px;
+    /* Uniform internal spacing */
     max-width: 100%;
-
-    flex-wrap: wrap;
-    gap: 15px;
+    position: relative;
+    /* Crucial for absolute placement of the mobile dropdown */
+    box-sizing: border-box;
 }
 
-.navbar-toggler {
+.logo {
+    height: 30px;
+    width: auto;
+    margin-top: 2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.04) rotate(-1.5deg);
+    filter: drop-shadow(4px 4px 8px rgba(251, 0, 255, 0.4));
+}
+
+/* --- THE HAMBURGER BUTTON STYLES --- */
+.hamburger-menu {
     display: none;
+    /* Hidden by default on Desktop widths */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
 }
 
-.navbar-collapse {
-    display: flex;
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
 }
 
-.navbar-nav {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
+/* Optional: Animates bars into an 'X' if button gets the .open class */
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ==========================================
+   WIDTH COMPATIBILITY (MEDIA QUERIES)
+   ========================================== */
+
+/* --- MOBILE & TABLET LAYOUT --- */
+@media (max-width: 992px) {
+    .hamburger-menu {
+        display: flex;
+        /* Reveal custom hamburger button */
+    }
+
+    /* Transform links wrapper into a clean absolute dropdown drawer */
+    .navbar-collapse {
+        display: none;
+        /* Hidden by default until toggled */
+        width: calc(100% - 4%);
+        /* Spans width matching the margin constraints */
+        position: absolute;
+        top: 110%;
+        /* Drops cleanly below the rounded pill border */
+        left: 2%;
+        background-color: #231c23;
+        border: 2px solid var(--pink);
+        border-radius: 15px;
+        padding: 15px;
+        z-index: 999;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+    }
+
+    /* Class injected via jQuery to render the open state */
+    .navbar-collapse.show-menu {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .nav-item {
+        width: 100% !important;
+        /* Items fill width on vertical stacks */
+        margin: 0;
+        box-sizing: border-box;
+        justify-content: center;
+        /* Centers text for mobile neatness */
+    }
+
+    /* Adjust desktop absolute layout for mobile sub-menus */
+    .nav-item.dropdown {
+        position: relative;
+        flex-direction: column;
+    }
+
+    .dropdown-menu {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100%;
+        margin-top: 10px !important;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+/* --- DESKTOP LAYOUT --- */
+@media (min-width: 993px) {
+    .navbar-collapse {
+        display: flex !important;
+        /* Always display links container */
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .nav-item {
+        margin: 0 5px;
+    }
+
+    .nav-item.dropdown {
+        position: relative;
+        /* Anchor point for desktop sub-dropdown placement */
+    }
+
+    /* Absolute floating desktop dropdown submenu box */
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #231c23 !important;
+        border: 2px solid var(--pink);
+        border-radius: 10px;
+        padding: 10px;
+        min-width: 160px;
+        margin-top: 12px;
+        z-index: 9999;
+    }
+
+    /* Show desktop dropdown cleanly on menu hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block !important;
+    }
+}
+
+/* --- STYLING DESIGN LEFTOVERS --- */
 .nav-item {
-    display: flex;
-    flex-direction: row;
     background-color: var(--pink);
-    margin: 2%;
-    width: max-content;
     text-wrap: nowrap;
     padding: 10px 15px;
     border-radius: 5px;
     font-family: var(--font);
+    transition: transform 0.1s ease;
 }
 
 .nav-link {
@@ -56,65 +206,18 @@
     font-family: var(--font);
     font-weight: 700;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
+    display: block;
+    width: 100%;
 }
 
-/* 1. KEEP THE DROPDOWN CONTAINER BEHAVIOR CLEAN */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #231c23 !important;
-    /* Keep it dark charcoal */
-    border: 2px solid var(--pink);
-    border-radius: 10px;
-    padding: 10px;
-    min-width: 160px;
-    margin-top: 12px;
-    /* Gives the container a solid minimum width */
-    z-index: 9999;
-}
-
-/* Show the menu container on hover or click */
-.dropdown-menu.show,
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block !important;
-}
-
-/* 2. SPECIFIC ITEMS INSIDE THE DROPDOWN */
 .dropdown-menu .dropdown-item {
     color: #ffffff !important;
-    /* Crisp white links inside the dark box */
     font-weight: 500;
     font-family: var(--font), sans-serif;
     padding: 8px 16px;
     display: block;
     background-color: transparent !important;
     text-decoration: none;
-    /* Keeps container dark by default */
-    transition: background-color 0.1s ease, color 0.1s ease;
-}
-
-/* 3. ONLY THE DROPDOWN LINK HOVER EFFECT */
-.dropdown-menu .dropdown-item:hover {
-    background-color: var(--pink) !important;
-    /* Pop pink highlight on link hover */
-    color: #231c23 !important;
-    /* Invert text to charcoal */
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.logo {
-    height: 30px;
-    width: auto;
-    margin-left: 25px;
-    margin-top: 7.5px;
-}
-
-.logo:hover {
-    transform: scale(1.04) rotate(-1.5deg);
-    box-shadow: 8px 8px 0px #000;
-    filter: drop-shadow(4px 4px 8px rgba(251, 0, 255, 0.4));
+    transition: background-color
 }

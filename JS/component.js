@@ -287,14 +287,16 @@ if (themeToggleCheckbox) {
         if (openModalContent) applyScrapbookBorders(openModalContent);
     });
 }
-
 // ==========================================
 // 6. DATA-DRIVEN INTERACTION ROUTER (MODAL SYSTEM)
 // ==========================================
 window.addEventListener('DOMContentLoaded', () => {
     const clickableItems = document.querySelectorAll('.grid-item, .dagger-item, .book-item');
     const modalOverlay = document.getElementById('popup-modal');
-    const modalImg = document.getElementById('modal-img');
+
+    // TARGET MATCHED TO YOUR HTML LAYOUT CLASS BELOW:
+    const mediaContainer = document.querySelector('.modal-media-wrapper');
+
     const modalTitle = document.getElementById('modal-title');
     const modalDesc = document.getElementById('modal-desc');
     const modalLink = document.getElementById('modal-link');
@@ -312,22 +314,20 @@ window.addEventListener('DOMContentLoaded', () => {
             if (modalTitle) modalTitle.innerText = data.title;
             if (modalDesc) modalDesc.innerHTML = data.description;
 
-            if (modalImg) {
+            // DYNAMIC MEDIA SLOT INJECTION
+            if (mediaContainer) {
                 if (data.video) {
-                    // If a video link is present, turn the image element slot into a responsive video frame embedding player
-                    modalImg.outerHTML = `<iframe id="modal-img" src="${data.video}" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%; aspect-ratio: 16/9; display:block; margin-bottom:15px; border-radius:4px;"></iframe>`;
+                    // Inject responsive iframe video frame inside the wrapper cleanly
+                    mediaContainer.innerHTML = `<iframe id="modal-img" src="${data.video}" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%; aspect-ratio: 16/9; display:block; margin-bottom:15px; border-radius:4px;"></iframe>`;
                 } else if (data.image) {
-                    // If it's just a standard image, ensure it renders as an <img> tag cleanly
-                    if (modalImg.tagName === 'IFRAME') {
-                        modalImg.outerHTML = `<img id="modal-img" src="${data.image}" alt="Project Visual Preview" loading="lazy" style="width:100%; display:block; margin-bottom:15px;">`;
-                    } else {
-                        modalImg.src = data.image;
-                        modalImg.style.display = 'block';
-                    }
+                    // Inject standard image frame asset inside the wrapper cleanly
+                    mediaContainer.innerHTML = `<img id="modal-img" src="${data.image}" alt="Project Visual Preview" loading="lazy" style="width:100%; display:block; margin-bottom:15px;">`;
                 } else {
-                    modalImg.style.display = 'none';
+                    // Clear the block completely if no media file path exists in the database entry
+                    mediaContainer.innerHTML = '';
                 }
             }
+
             if (modalLink) {
                 if (data.link) {
                     modalLink.href = data.link;
@@ -353,4 +353,15 @@ window.addEventListener('DOMContentLoaded', () => {
             if (e.target === modalOverlay) modalOverlay.classList.remove('is-open');
         });
     }
+});
+
+$(document).ready(function () {
+    $('#hamburger-btn').on('click', function () {
+        // Toggles the visibility of the main navigation links
+        $('.navbar-collapse').toggleClass('show-menu');
+
+        // Optional: Toggles an active state on the hamburger button itself 
+        // (Great if you want to animate the 3 bars into an "X")
+        $(this).toggleClass('open');
+    });
 });
