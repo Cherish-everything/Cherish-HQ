@@ -1388,14 +1388,11 @@ audio {
         font-size: 0.9rem;
     }
 
-    .theme-switch-wrapper.whimsy-card {
-        margin: 15px auto;
-    }
-
     .dagger-timeline {
         gap: 25px;
         padding: 0 15px;
         margin: 30px auto;
+        width: 92%;
     }
 
     .dagger-row {
