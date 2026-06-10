@@ -1257,6 +1257,7 @@ audio {
         width: 100%;
         letter-spacing: 1px;
         font-family: var(--font);
+        text-align: center;
     }
 
     .banner-container {
@@ -1270,7 +1271,7 @@ audio {
         width: 92vw;
         padding: 25px 20px;
         margin: 15px auto;
-        text-align: left !important;
+        text-align: center;
     }
 
     .article-1-container {
@@ -1289,6 +1290,7 @@ audio {
         font-size: 1.7rem;
         text-shadow: none !important;
         margin-bottom: 12px;
+            
     }
 
     .article-1,
