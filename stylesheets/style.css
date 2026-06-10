@@ -1315,8 +1315,8 @@ audio {
     }
 
     .whimsy-list-2 li {
-        justify-content: flex-start;
-        margin-right: 0;
+        justify-content: flex-end;
+        margin-right: 5%;
     }
 
     .whimsy-list-1 .list-text,
