@@ -132,13 +132,23 @@ const projectDatabase = {
     "Writer's Block": {
         title: "Writer's Block",
         image: "",
-        link: "",
+        link: "../Cherish-HQ/assets/writing/Lastmonthof15.html",
         description: `
             <p><strong>Serious Description:</strong></p>
             <p>After a young researcher clashes with an anonymous critic online, she discovers he's her classmate, and their rivalry gradually turns into an unexpected connection as they help each other grow.</p>
             <br>
             <p><strong>Accurate Description:</strong></p>
             <p>An overcaffeinated top student starts a comment-section war with a guy who insults her research paper. Unfortunately, he's smart, annoyingly attractive, and keeps showing up everywhere.</p>
+        `
+    },
+
+    "Last Month of 15": {
+        title: "Last Month of 15",
+        image: "",
+        link: "",
+        description: `
+            <p><strong>A personal reflective essay on my last month being 15.</strong></p>
+            <p>Growing up, I never felt ready, never felt enough. And maybe no one ever does.</p>
         `
     }
 };
